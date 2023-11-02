@@ -12,10 +12,13 @@ pipeline{
             
         }
         satge('test'){
+            steps{
+                
             withSonarQubeEnv(credentialsId: 'Jenkins') {
 sh "$SONAR/bin/sonar-scanner -Dsonar.projectName=Bank -Dsonar.projectKey=Bank"
                 
 }
+            }
         }
     }
 }
