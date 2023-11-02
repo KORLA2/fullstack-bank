@@ -14,7 +14,7 @@ pipeline{
         stage('test'){
             steps{
                 
-            withSonarQubeEnv(credentialsId: 'Jenkins') {
+            withSonarQubeEnv('sonarqube') {
 sh " $SONAR/bin/sonar-scanner -Dsonar.projectName=Bank -Dsonar.projectKey=Bank"
                 
 }
