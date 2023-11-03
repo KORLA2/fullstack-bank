@@ -1,7 +1,10 @@
 pipeline{
     agent any
-    environment{
-        SONAR = tool 'qube'
+    // environment{
+    //     SONAR = tool 'qube'
+    // }
+    tools{
+        SONAR = 'qube'
     }
     stages{
         stage('git'){
