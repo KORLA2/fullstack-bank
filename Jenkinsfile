@@ -3,7 +3,7 @@ pipeline{
     // environment{
     //     SONAR = tool 'qube'
     // }
-    tools{
+    tool{
         SONAR = 'qube'
     }
     stages{
