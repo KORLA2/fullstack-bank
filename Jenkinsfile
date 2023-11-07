@@ -1,11 +1,10 @@
 pipeline{
     agent any
-    // environment{
-    //     SONAR = tool 'qube'
-    // }
-    tool{
-        SONAR = 'qube'
+    environment{
+        
+        SONAR = tool 'qube'
     }
+   
     stages{
         stage('git'){
             steps{
@@ -16,11 +15,14 @@ pipeline{
         }
         stage('test'){
             steps{
-                
-            withSonarQubeEnv('sonarqube') {
-sh " $SONAR/bin/sonar-scanner -Dsonar.projectName=Bank -Dsonar.projectKey=Bank"
-                
+
+                withCredentials([string(credentialsId: 'sonartoken', variable: '')]) {
+   sh " $SONAR/bin/sonar-scanner -Dsonar.projectName=Bank -Dsonar.projectKey=Bank"
 }
+//             withSonarQubeEnv('sonarqube') {
+
+                
+// }
             }
         }
     }
