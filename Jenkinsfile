@@ -2,7 +2,7 @@ pipeline{
     agent any
     environment{
         
-        SONAR = tool 'qube'
+        SONAR = tool 'sonarscanner'
     }
    
     stages{
