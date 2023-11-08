@@ -4,7 +4,9 @@ pipeline{
         
         SONAR = tool 'sonarscanner'
     }
- 
+ tools{
+     docker 'Docker'
+ }
     stages{
         stage('git'){
             steps{
