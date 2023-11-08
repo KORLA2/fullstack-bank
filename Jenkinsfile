@@ -4,7 +4,9 @@ pipeline{
         
         SONAR = tool 'sonarscanner'
     }
-   
+   tools{
+       Docker 'Docker'
+   }
     stages{
         stage('git'){
             steps{
@@ -25,5 +27,10 @@ pipeline{
 }
             }
         }
+stage('build and push'){
+
+    sh "docker-compose up -d "
+}
+        
     }
 }
