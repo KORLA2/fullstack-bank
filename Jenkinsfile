@@ -16,13 +16,13 @@ pipeline{
         stage('test'){
             steps{
 
-                withCredentials([string(credentialsId: 'sonartoken', variable: '')]) {
-   sh " $SONAR/bin/sonar-scanner -Dsonar.projectName=Bank -Dsonar.projectKey=Bank"
-}
-//             withSonarQubeEnv('sonarqube') {
-
-                
+//                 withCredentials([string(credentialsId: 'sonartoken', variable: '')]) {
+//    sh " $SONAR/bin/sonar-scanner -Dsonar.projectName=Bank -Dsonar.projectKey=Bank"
 // }
+            withSonarQubeEnv('QubeSOnar') {
+ sh " $SONAR/bin/sonar-scanner -Dsonar.projectName=Bank -Dsonar.projectKey=Bank"
+                
+}
             }
         }
     }
