@@ -29,7 +29,7 @@ pipeline{
 stage('build and push'){
     steps{
         
-    sh "docker-compose up -d "
+    sh "docker -v"
 }
 }
     }
