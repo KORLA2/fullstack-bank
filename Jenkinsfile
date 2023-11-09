@@ -29,7 +29,7 @@ pipeline{
 stage('build and push'){
     steps{
         
-    docker -v
+    docker build -t backend app .
 }
 }
     }
