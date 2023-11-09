@@ -4,9 +4,7 @@ pipeline{
         
         SONAR = tool 'sonarscanner'
     }
- tools{
-     Docker 'docker'
- }
+
     stages{
         stage('git'){
             steps{
@@ -31,7 +29,7 @@ pipeline{
 stage('build and push'){
     steps{
         
-    sh "docker -v"
+    docker -v
 }
 }
     }
