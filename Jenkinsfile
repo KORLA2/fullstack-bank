@@ -13,5 +13,11 @@ stage('build and push'){
    sh ' docker build -t backend .'
     }
 }
+        
+    }
+    post{
+        always{
+            echo "Iam always running"
+        }
     }
 }
