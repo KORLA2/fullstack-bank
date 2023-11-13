@@ -1,16 +1,15 @@
 pipeline{
     agent any
-    environment{
-        
-        SONAR = tool 'sonarscanner'
-    }
-
+  tools{
+      dockerTool 'Docker'
+  }
+    
     stages{
     
 stage('build and push'){
     steps{
         
-   sh ' docker build -t backend .'
+   sh ' docker -v'
     }
 }
         
