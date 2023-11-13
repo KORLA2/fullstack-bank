@@ -16,7 +16,7 @@ stage('Using Credentials as environment variable'){
       steps   {
        withCredentials([usernamePassword(credentials:'DockerHubCred',
                        usernameVariable:Username, passwordVariable:Password)]){
-             echo "${username} ${password}"
+             echo "${Username} ${Password}"
 
           }      
       }
