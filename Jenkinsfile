@@ -21,5 +21,5 @@ stage('Using Credentials as environment variable'){
           }      
       }
    }
-
+    }
 }
