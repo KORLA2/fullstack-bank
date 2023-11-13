@@ -1,1 +1,1 @@
-def Hello = "Iam Hello"
+String Hello = "Iam Hello"
