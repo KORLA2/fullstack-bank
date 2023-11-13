@@ -1,25 +1,17 @@
 pipeline{
-    agent any
- environment {
- docker_hub_credentials=credentials('DockerHubCred') 
-                      
- } 
-    stages{
-    
-stage('Using Credentials as environment variable'){
-    steps {
-       echo "${docker_hub_credentials_USR} ,${docker_hub_credentials_PSW}"
+agent any
+  stages{
+
+  stage('build'){
+      steps{
+        echo "Iam building stage"
+          }
      }
 
+stage('deploy'){
+    steps {
+      echo "Iam deploying stage"
+         }
     }
-   //  stage('Making Credentials this stage specific') {
-   //    steps   {
-   //     withCredentials([usernamePassword(credentials:'DockerHubCred',
-   //                     usernameVariable:USER, passwordVariable:PWD)]){
-   //           sh  " echo ${USER},${PWD} "
-
-   //        }      
-   //    }
-   // }
-    }
+ }
 }
