@@ -8,7 +8,10 @@ choice (name:'mychoice' , choices:['1.0','1.1','1.2'] )
   stages {
     stage('parameters') {
       steps  {
-      echo "Iam ${params.mychoice} ${params.version} " // Now I can use docker commands in my pipeline
+     script{
+      def scr=load "script.groovy"
+      echo scr.Hello
+     }
       }
     }
   }
