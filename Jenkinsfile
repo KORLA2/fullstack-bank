@@ -8,7 +8,7 @@ choices (name:'mychoice' , choices:['1.0','1.1','1.2'] )
   stages {
     stage('parameters') {
       steps  {
-      echo "Iam ${params.version} ${params.mychoice}" # Now I can use docker commands in my pipeline
+      echo "Iam ${params.version} ${params.mychoice}" // Now I can use docker commands in my pipeline
       }
     }
   }
