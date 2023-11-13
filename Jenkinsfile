@@ -1,6 +1,6 @@
 pipeline {
 parameters {
- string (name :'version', description: 'the newest version' )
+ string (name :'version',defaultValue:'Iam god ', description: 'the newest version' )
 choice (name:'mychoice' , choices:['1.0','1.1','1.2'] )
 
  }
