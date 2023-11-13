@@ -10,7 +10,7 @@ pipeline{
 stage('build and push'){
     steps{
         
-   // sh ' docker build -t backend .'
+   sh ' docker build -t backend .'
     }
 }
         
