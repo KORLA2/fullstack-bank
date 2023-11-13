@@ -22,5 +22,8 @@ stage('build and push'){
         success{
               echo "Iam  running in success"
         }
+        failed{
+             echo "Iam  running in failure"
+        }
     }
 }
