@@ -10,7 +10,7 @@ choice (name:'mychoice' , choices:['1.0','1.1','1.2'] )
       steps  {
      script{
       def scr=load "script.groovy"
-      echo scr
+      echo scr()
      }
       }
     }
