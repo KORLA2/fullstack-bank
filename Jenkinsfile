@@ -15,8 +15,8 @@ pipeline{
     stage('Making Credentials this stage specific') {
       steps   {
        withCredentials([usernamePassword(credentials:'DockerHubCred',
-                       usernameVariable:Username, passwordVariable:Password)]){
-             sh  " echo ${Username},${Password} "
+                       usernameVariable:USER, passwordVariable:PWD)]){
+             sh  " echo ${USER},${PWD} "
 
           }      
       }
