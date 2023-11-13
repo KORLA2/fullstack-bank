@@ -10,7 +10,7 @@ pipeline{
 stage('build and push'){
     steps{
         
-   sh ' docker build -t backend .'
+   // sh ' docker build -t backend .'
     }
 }
         
@@ -18,6 +18,9 @@ stage('build and push'){
     post{
         always{
             echo "Iam always running"
+        }
+        success{
+              echo "Iam  running in success"
         }
     }
 }
