@@ -1,2 +1,2 @@
-String Hello = "Iam Hello"
+def Hello() { return "Iam Hello" }
 return Hello
