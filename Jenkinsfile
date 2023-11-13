@@ -1,28 +1,16 @@
-pipeline{
-    agent any
-  tools{
-      dockerTool 'Docker'
+pipeline {
+parameters {
+ string (name : 'version', description: 'the newest version' )
+choices (name:'mychoice' , choices:['1.0','1.1','1.2'] )
+
+ }
+ agent any
+  stages {
+    stage('parameters') {
+      steps  {
+      echo "Iam ${params.version} ${params.mychoice}" # Now I can use docker commands in my pipeline
+      }
+    }
   }
-    
-    stages{
-    
-stage('build and push'){
-    steps{
-        
-   sh ' docker -v'
-    }
-}
-        
-    }
-    post{
-        always{
-            echo "Iam always running"
-        }
-        success{
-              echo "Iam  running in success"
-        }
-        failure{
-             echo "Iam  running in failure"
-        }
-    }
+
 }
